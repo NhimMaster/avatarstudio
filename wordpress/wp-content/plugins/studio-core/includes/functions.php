@@ -103,3 +103,19 @@ function my_custom_masonry_gallery_shortcode($atts)
     return $output;
 }
 add_shortcode('masonry_gallery', 'my_custom_masonry_gallery_shortcode');
+
+
+function add_custom_social_buttons()
+{
+?>
+    <div class="social-buttons">
+        <a href="https://zalo.me/0902645993" class="social-button zalo" target="_blank">
+            <i class="fab fa-zalo"></i>
+        </a>
+        <a href="https://m.me/avatarstudio22" class="social-button messenger" target="_blank">
+            <i class="fab fa-facebook-messenger"></i>
+        </a>
+    </div>
+<?php
+}
+add_action('wp_footer', 'add_custom_social_buttons');

@@ -62,3 +62,64 @@
     font-size: 18px;
     font-weight: 600;
 }
+
+@media (max-width: 575px) {
+	.site-header .header-inner{
+		flex-wrap: nowrap;
+	}
+}
+.site-navigation-dropdown ul.menu li.current-menu-item a{
+	background: var(--e-global-color-primary)
+}
+.site-header .site-navigation ul.menu li a {
+  position: relative;
+}
+
+.site-header .site-navigation ul.menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #d6d6d6;
+  transition: width 0.3s ease;
+}
+
+.site-header .site-navigation ul.menu li a:hover::after{
+	width: 100%;
+}
+
+.social-buttons {
+    position: fixed; /* Giúp nút luôn hiển thị */
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.social-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.social-button:hover {
+    transform: scale(1.1);
+}
+
+/* Tùy chỉnh màu sắc cho từng nút */
+.social-button.zalo {
+    background-color: #0087FF;
+}
+
+.social-button.messenger {
+    background-color: #0078FF;
+}
