@@ -115,7 +115,7 @@ function add_custom_social_buttons()
 
         </a>
         <a href="https://m.me/avatarstudio22" class="social-button messenger" target="_blank">
-            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/images.png" width="50" height="50" />
+            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/icon-messenger.png" width="50" height="50" />
         </a>
     </div>
 <?php
