@@ -45,8 +45,6 @@ add_shortcode('list_albums', 'studio_list_albums_shortcode');
 // Hàm để thêm các script và stylesheet
 function my_custom_masonry_scripts()
 {
-    //fontawesome
-    wp_enqueue_style("fontawesome", 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css');
 
     wp_enqueue_style('style', MY_STUDIO_CORE_PLUGIN_URL . 'assets/css/style.css');
     // Đăng ký và enqueue stylesheet
