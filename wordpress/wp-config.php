@@ -123,6 +123,12 @@ if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 	eval($configExtra);
 }
 
+
+define("FS_METHOD", "direct");
+
+define("FS_CHMOD_DIR",0755);
+
+define("FS_CHMOD_FILE",0644);
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
