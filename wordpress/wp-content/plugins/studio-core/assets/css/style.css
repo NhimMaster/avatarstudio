@@ -1,0 +1,64 @@
+/* = Custom styles for Albums */
+.album-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.album-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.album-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.album-item .button {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #0073aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.album-item .button:hover {
+    background: #005177;
+}
+
+.album-archive .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.album-item {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.album-item:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.album-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.album-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
