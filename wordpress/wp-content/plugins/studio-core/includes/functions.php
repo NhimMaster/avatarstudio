@@ -111,11 +111,11 @@ function add_custom_social_buttons()
 ?>
     <div class="social-buttons">
         <a href="https://zalo.me/0902645993" class="social-button zalo" target="_blank">
-            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/Icon_of_Zalo.svg_.png" width="30" height="30" />
+            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/Icon_of_Zalo.svg_.png" width="50" height="50" />
 
         </a>
         <a href="https://m.me/avatarstudio22" class="social-button messenger" target="_blank">
-            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/Icon_of_Zalo.svg_.png" width="30" height="30" />
+            <img src="https://avatarstudio.vn/wp-content/uploads/2025/08/images.png" width="50" height="50" />
         </a>
     </div>
 <?php
