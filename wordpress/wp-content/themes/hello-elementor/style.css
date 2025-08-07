@@ -1,0 +1,80 @@
+/*
+	Theme Name: Hello Elementor
+	Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+	Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+	Author: Elementor Team
+	Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+	Version: 3.4.4
+	Stable tag: 3.4.4
+	Requires at least: 6.0
+	Tested up to: 6.8
+	Requires PHP: 7.4
+	License: GNU General Public License v3 or later.
+	License URI: https://www.gnu.org/licenses/gpl-3.0.html
+	Text Domain: hello-elementor
+	Tags: accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,
+*/
+/* = Custom styles for Albums */
+.album-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.album-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.album-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.album-item .button {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #0073aa;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.album-item .button:hover {
+    background: #005177;
+}
+
+.album-archive .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.album-item {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.album-item:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.album-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.album-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}

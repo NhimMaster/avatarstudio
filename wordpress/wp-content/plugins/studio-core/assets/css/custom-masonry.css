@@ -1,0 +1,19 @@
+/* Các quy tắc cơ bản cho container */
+.custom-masonry-gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Các quy tắc cho mỗi item */
+.custom-masonry-item {
+    width: calc(33.333% - 10px); /* 3 cột, trừ đi khoảng cách */
+    margin-bottom: 10px; /* Khoảng cách dưới */
+    float: left; /* Tùy chọn nếu cần */
+}
+
+/* Các quy tắc cho hình ảnh bên trong */
+.custom-masonry-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
