@@ -121,3 +121,5 @@ function add_custom_social_buttons()
 <?php
 }
 add_action('wp_footer', 'add_custom_social_buttons');
+
+add_filter( 'big_image_size_threshold', '__return_false' );
