@@ -39,6 +39,9 @@ function studio_list_albums_shortcode($atts)
 
     return ob_get_clean();
 }
+add_filter( 'big_image_size_threshold', function() {
+    return 5120; // đổi thành giới hạn bạn muốn
+});
 
 add_shortcode('list_albums', 'studio_list_albums_shortcode');
 
@@ -121,7 +124,3 @@ function add_custom_social_buttons()
 <?php
 }
 add_action('wp_footer', 'add_custom_social_buttons');
-
-add_filter( 'big_image_size_threshold', function() {
-    return 5120; // đổi thành giới hạn bạn muốn
-});
