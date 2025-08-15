@@ -1,0 +1,10 @@
+# WordPress core and common files
+/wp-admin/
+/wp-includes/
+/wp-content/cache/
+/wp-content/uploads/
+/wp-config.php
+/.htaccess
+/license.txt
+/readme.html
+/xmlrpc.php
