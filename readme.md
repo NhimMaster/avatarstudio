@@ -12,9 +12,13 @@ restart container
 
 kiểm tra lại xem
 docker exec -it <container_id> php -i | grep memory_limit
-
 hiển thi memory_limit => 512M => 512M là okie
+
+kiểm tra dùng logs
+docker logs <container_name> --tail 50 -f
+
 
 id container hiện tại : b63e8e52cf98
 docker cp php-custom.ini b63e8e52cf98:/usr/local/etc/php/conf.d/
 docker exec -it b63e8e52cf98 php -i | grep memory_limit
+docker logs b63e8e52cf98 --tail 50 -f
