@@ -101,6 +101,7 @@ function studio_album_gallery_box_callback($post)
                     selection.map(function(att) {
                         att = att.toJSON();
                         ids.push(att.id);
+                        console.log("check in ", att)
                         $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img src="' + att.sizes.thumbnail.url + '" /></li>');
                     });
                     $('#album_gallery_ids').val(ids.join(','));
