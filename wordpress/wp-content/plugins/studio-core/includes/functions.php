@@ -44,10 +44,10 @@ function studio_list_albums_shortcode($atts)
 // });
 
 // add_filter( 'big_image_size_threshold', '__return_false' );
-add_filter( 'big_image_size_threshold', function( $size ) {
-    error_log( 'big_image_size_threshold is running, current value: ' . var_export( $size, true ) );
-    return false; // bỏ giới hạn resize
-});
+function custom_disable_image_resizing( $threshold ) {
+    return 0;
+}
+add_filter('big_image_size_threshold', 'custom_disable_image_resizing');
 
 add_shortcode('list_albums', 'studio_list_albums_shortcode');
 
