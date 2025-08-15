@@ -126,3 +126,49 @@ function add_custom_social_buttons()
 <?php
 }
 add_action('wp_footer', 'add_custom_social_buttons');
+
+function optimize_image_with_imagick($file) {
+
+    // Chỉ xử lý các file ảnh được hỗ trợ
+    $supported_types = array('image/jpeg', 'image/png', 'image/gif');
+    if (!in_array($file['type'], $supported_types)) {
+        return $file;
+    }
+
+    // Kiểm tra xem thư viện Imagick đã được cài đặt chưa
+    if (!class_exists('Imagick')) {
+        return $file;
+    }
+
+    try {
+        // Tạo một đối tượng Imagick từ file ảnh
+        $imagick = new Imagick($file['file']);
+
+        // Tùy chỉnh chất lượng nén tùy thuộc vào định dạng ảnh
+        if ($file['type'] == 'image/jpeg') {
+            // Đặt chất lượng nén JPEG (từ 0 đến 100)
+            $imagick->setImageCompression(Imagick::COMPRESSION_JPEG);
+            $imagick->setImageCompressionQuality(80); // 80 là chất lượng tốt và dung lượng nhỏ
+        } elseif ($file['type'] == 'image/png') {
+            // Đặt chất lượng nén PNG (từ 0 đến 10, 0 là tốt nhất)
+            $imagick->setImageCompression(Imagick::COMPRESSION_PNG);
+            $imagick->setImageCompressionQuality(8); // 8 là một mức độ nén tốt
+        }
+
+        // Ghi đè file gốc bằng file đã tối ưu
+        $imagick->writeImage($file['file']);
+
+        // Giải phóng tài nguyên
+        $imagick->destroy();
+
+    } catch (Exception $e) {
+        // Ghi lại lỗi nếu quá trình xử lý thất bại
+        error_log('Imagick optimization failed: ' . $e->getMessage());
+        return $file;
+    }
+
+    return $file;
+}
+
+// Hook hàm tùy chỉnh vào WordPress
+add_filter('wp_handle_upload', 'optimize_image_with_imagick', 10);
