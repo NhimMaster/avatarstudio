@@ -7,5 +7,14 @@ max_execution_time = 300
 
 sau đó chạy lệnh sau để coppy file vào config php
 docker cp php-custom.ini <container_id>:/usr/local/etc/php/conf.d/
+
+restart container
+
+kiểm tra lại xem
+docker exec -it <container_id> php -i | grep memory_limit
+
+hiển thi memory_limit => 512M => 512M là okie
+
 id container hiện tại : b63e8e52cf98
 docker cp php-custom.ini b63e8e52cf98:/usr/local/etc/php/conf.d/
+docker exec -it b63e8e52cf98 php -i | grep memory_limit

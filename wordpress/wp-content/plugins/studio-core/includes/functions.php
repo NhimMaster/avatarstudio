@@ -122,4 +122,6 @@ function add_custom_social_buttons()
 }
 add_action('wp_footer', 'add_custom_social_buttons');
 
-add_filter( 'big_image_size_threshold', '__return_false' );
+add_filter( 'big_image_size_threshold', function() {
+    return 5120; // đổi thành giới hạn bạn muốn
+});
