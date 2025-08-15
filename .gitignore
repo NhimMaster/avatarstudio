@@ -1,10 +1,8 @@
 # WordPress core and common files
-/wp-admin/
-/wp-includes/
-/wp-content/cache/
-/wp-content/uploads/
-/wp-config.php
-/.htaccess
-/license.txt
-/readme.html
-/xmlrpc.php
+/wordpress/wp-admin/
+/wordpress/wp-includes/
+/wordpress/wp-content/cache/
+/wordpress/wp-content/uploads/
+/wordpress/license.txt
+/wordpress/readme.html
+/wordpress/xmlrpc.php
