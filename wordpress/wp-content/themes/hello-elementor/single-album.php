@@ -40,7 +40,18 @@
         //     rowHeight: 220,
         //     maxRowHeight: 300,
         // });
+        var $grid = $('.custom-masonry-gallery-container');
 
+        // Khởi tạo Masonry khi các hình ảnh đã được tải xong
+        $grid.imagesLoaded(function() {
+            $grid.masonry({
+                itemSelector: '.custom-masonry-item',
+                columnWidth: '.custom-masonry-item',
+                gutter: 10
+            });
+            // Khởi tạo Lightgallery
+            lightGallery(document.querySelector('.custom-masonry-gallery-container'));
+        });
     });
 </script>
 <?php get_footer(); ?>
