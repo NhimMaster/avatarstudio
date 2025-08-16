@@ -57,9 +57,9 @@ function my_custom_masonry_scripts()
     // /var/www/html/wp-content/plugins/studio-core/includes/
     wp_enqueue_style('custom-masonry-style', MY_STUDIO_CORE_PLUGIN_URL . 'assets/css/custom-masonry.css');
     // Đăng ký và enqueue thư viện Masonry
-    if (! wp_script_is('masonry', 'enqueued')) {
+    // if (! wp_script_is('masonry', 'enqueued')) {
         wp_enqueue_script('masonry', MY_STUDIO_CORE_PLUGIN_URL . 'assets/js/masonry.pkgd.min.js', array(), '4.2.2', true);
-    }
+    // }
 
     // Đăng ký và enqueue script khởi tạo Masonry
     wp_enqueue_script('custom-masonry-init', MY_STUDIO_CORE_PLUGIN_URL . 'assets/js/custom-masonry.js', array('jquery', 'masonry'), '1.0.0', false);
