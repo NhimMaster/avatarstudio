@@ -7,7 +7,7 @@
         <?php the_content(); ?>
     </div>
 
-    <!-- <div class="album-gallery">
+    <div class="album-gallery">
         <?php
         $images = get_post_meta(get_the_ID(), 'album_gallery', true);
         if ($images && is_array($images)) {
@@ -19,8 +19,8 @@
             echo '<p>Không có ảnh nào trong album.</p>';
         }
         ?>
-    </div> -->
-    <div class="custom-masonry-gallery-container">
+    </div>
+    <!-- <div class="custom-masonry-gallery-container">
         <?php
         $images = get_post_meta(get_the_ID(), 'album_gallery', true);
         if ($images && is_array($images)) {
@@ -32,14 +32,14 @@
             echo '<p>Không có ảnh nào trong album.</p>';
         }
         ?>
-    </div>
+    </div> -->
 </div>
 <script>
     jQuery(document).ready(function($) {
-        // $('.album-gallery').justifiedGallery({
-        //     rowHeight: 220,
-        //     maxRowHeight: 300,
-        // });
+        $('.album-gallery').justifiedGallery({
+            rowHeight: 220,
+            maxRowHeight: 300,
+        });
 
     });
 </script>
