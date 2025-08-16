@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 
     // Khởi tạo Masonry khi các hình ảnh đã được tải xong
     setTimeout(function () {
-        $grid.imagesLoaded(function () {
+        // $grid.imagesLoaded(function () {
             $grid.masonry({
                 itemSelector: '.custom-masonry-item',
                 columnWidth: '.custom-masonry-item',
@@ -11,6 +11,6 @@ jQuery(document).ready(function ($) {
             });
             // Khởi tạo Lightgallery
             // lightGallery(document.querySelector('.custom-masonry-gallery-container'));
-        });
+        // });
     }, 1000)
 });
