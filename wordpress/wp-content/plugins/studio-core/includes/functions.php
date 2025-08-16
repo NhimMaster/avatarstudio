@@ -62,7 +62,7 @@ function my_custom_masonry_scripts()
     }
 
     // Đăng ký và enqueue script khởi tạo Masonry
-    //wp_enqueue_script('custom-masonry-init', MY_STUDIO_CORE_PLUGIN_URL . 'assets/js/custom-masonry.js', array('jquery', 'masonry'), '1.0.0', false);
+    wp_enqueue_script('custom-masonry-init', MY_STUDIO_CORE_PLUGIN_URL . 'assets/js/custom-masonry.js', array('jquery', 'masonry'), '1.0.0', false);
 
     // Lightgallery CSS
     wp_enqueue_style('lightgallery-css', 'https://cdn.jsdelivr.net/npm/lightgallery@latest/css/lightgallery.min.css');
