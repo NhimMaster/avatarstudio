@@ -40,8 +40,8 @@ while (have_posts()) :
         .image-grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(6, 1fr));
-            gap: 15px;
-            margin-top: 30px;
+            gap: 0.5rem;
+            margin-top: 2rem;
         }
 
         .image-item {
