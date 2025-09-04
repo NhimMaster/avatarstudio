@@ -8,7 +8,7 @@ get_header();
 
 while ( have_posts() ) :
     the_post();
-    $image_ids = get_post_meta( get_the_ID(), 'album_gallery', true ) ?: [];
+    $image_ids = get_post_meta( get_the_ID(), 'albums', true ) ?: [];
 ?>
 
 <div class="album-container">
