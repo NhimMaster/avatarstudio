@@ -1,46 +1,81 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Template Name: Single Album Template
+ * Template Post Type: album
+ */
 
-<div class="container">
-    <h1><?php the_title(); ?></h1>
+get_header();
 
+while ( have_posts() ) :
+    the_post();
+    $image_ids = get_post_meta( get_the_ID(), 'album_gallery', true ) ?: [];
+?>
+
+<div class="album-container">
+    <h1 class="album-title"><?php the_title(); ?></h1>
     <div class="album-description">
         <?php the_content(); ?>
     </div>
 
-    <div class="album-gallery">
+    <div class="image-grid-container">
         <?php
-        $images = get_post_meta(get_the_ID(), 'album_gallery', true);
-        if ($images && is_array($images)) {
-            foreach ($images as $image_id) {
-                $src = wp_get_attachment_image_url($image_id, 'large');
-                echo '<div class="item-gallery"><img src="' . esc_url($src) . '" style="max-width:100%; max-height:100%;" /></div>';
+        if ( is_array( $image_ids ) && !empty( $image_ids ) ) {
+            foreach ( $image_ids as $image_id ) {
+                $thumb_url = wp_get_attachment_image_url( $image_id, 'medium' );
+                $full_url = wp_get_attachment_image_url( $image_id, 'full' );
+                if ( $thumb_url && $full_url ) {
+                    ?>
+                    <div class="image-item">
+                        <a href="<?php echo esc_url( $full_url ); ?>" data-elementor-open-lightbox="yes">
+                            <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" />
+                        </a>
+                    </div>
+                    <?php
+                }
             }
-        } else {
-            echo '<p>Không có ảnh nào trong album.</p>';
         }
         ?>
     </div>
-    <!-- <div class="custom-masonry-gallery-container">
-        <?php
-        $images = get_post_meta(get_the_ID(), 'album_gallery', true);
-        if ($images && is_array($images)) {
-            foreach ($images as $image_id) {
-                $src = wp_get_attachment_image_url($image_id, 'large');
-                echo '<a class="custom-masonry-item" data-src="' . esc_url($src) . '"><img src="' . esc_url($src) . '" style="max-width:100%; max-height:100%;" /></a>';
-            }
-        } else {
-            echo '<p>Không có ảnh nào trong album.</p>';
-        }
-        ?>
-    </div> -->
 </div>
-<script>
-    jQuery(document).ready(function($) {
-        $('.album-gallery').justifiedGallery({
-            rowHeight: 220,
-            maxRowHeight: 300,
-        });
 
-    });
-</script>
-<?php get_footer(); ?>
+<style>
+    /* CSS để tạo layout grid và làm ảnh hình vuông */
+    .image-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+    }
+    .image-item {
+        position: relative;
+        padding-bottom: 100%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .image-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .image-item img:hover {
+        transform: scale(1.05);
+    }
+    .album-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .album-title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+</style>
+
+<?php
+endwhile;
+get_footer();
+?>
