@@ -24,7 +24,7 @@ while (have_posts()) :
             ?>
                         <div class="image-item">
                             <a href="<?php echo esc_url($full_url); ?>" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="<?php echo esc_attr($slideshow_name); ?>">
-                                <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                                <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" loading="lazy"/>
                             </a>
                         </div>
             <?php
