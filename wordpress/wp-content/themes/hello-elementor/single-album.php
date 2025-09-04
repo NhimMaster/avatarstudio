@@ -39,7 +39,7 @@ while (have_posts()) :
         /* CSS để tạo layout grid và làm ảnh hình vuông */
         .image-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(6, 1fr));
             gap: 15px;
             margin-top: 30px;
         }
