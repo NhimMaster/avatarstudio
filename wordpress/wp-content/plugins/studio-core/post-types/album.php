@@ -51,7 +51,7 @@ function studio_album_gallery_box_callback($post)
     echo '<ul style="margin: 0; padding: 0;">';
 
     foreach ($image_ids as $image_id) {
-        $thumb = wp_get_attachment_image($image_id, 'thumbnail');
+        $thumb = wp_get_attachment_image($image_id, 'thumnails');
         echo "<li style='display:inline-block; margin-right:10px; '>$thumb</li>";
     }
 
@@ -98,13 +98,19 @@ function studio_album_gallery_box_callback($post)
                     var selection = image_frame.state().get('selection');
                     var ids = [];
                     $('#album-gallery-container ul').html('');
-                    selection.map(function(att) {
-                        att = att.toJSON();
-                        ids.push(att.id);
-                        console.log("check in ", att)
-                        $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img src="' + att.sizes.thumbnail.url + '" /></li>');
-                    });
-                    $('#album_gallery_ids').val(ids.join(','));
+		    selection.map(function(att) {
+			    att = att.toJSON();
+			    if(att.id){
+			ids.push(att.id);
+			let imageUrl = att.url;
+			console.log("check in aa", att)
+				if(att.sizes.thumbnail){
+					imageUrl = att.sizes.thumbnail.url;
+			}
+                        $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img src="' + imageUrl + '" /></li>');
+			    }});
+			    $('#album_gallery_ids').val(ids.join(','));
+		    
                 });
                 image_frame.open();
             });
