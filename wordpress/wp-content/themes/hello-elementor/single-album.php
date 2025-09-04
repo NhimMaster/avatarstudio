@@ -39,7 +39,7 @@ while (have_posts()) :
         /* CSS để tạo layout grid và làm ảnh hình vuông */
         .image-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(6, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
             gap: 0.5rem;
             margin-top: 2rem;
         }
@@ -66,7 +66,7 @@ while (have_posts()) :
         }
 
         .album-container {
-            max-width: 960px;
+            max-width: 1440px;
             margin: 0 auto;
             padding: 20px;
         }
