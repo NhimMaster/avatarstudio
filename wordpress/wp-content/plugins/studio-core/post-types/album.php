@@ -107,7 +107,7 @@ function studio_album_gallery_box_callback($post)
                             if (att.sizes.thumbnail) {
                                 imageUrl = att.sizes.thumbnail.url;
                             }
-                            $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img width="60px" height="auto" src="' + imageUrl + '" /></li>');
+                            $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px; width: 80px;height: auto;aspect-ratio: 1 / 1;"><img style="aspect-ratio: 1 / 1;object-fit: fill;" src="' + imageUrl + '" /></li>');
                         }
                     });
                     $('#album_gallery_ids').val(ids.join(','));
