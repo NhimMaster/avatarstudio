@@ -123,6 +123,10 @@ function studio_album_gallery_box_callback($post)
             });
         });
     </script>
+    <style>
+        #album-gallery-container ul{display: grid; grid-template-columns: repeat(6, 1fr);}
+        #album-gallery-container ul img{aspect-ratio: 1/1; object-fit: cover;}
+    </style>
 <?php
 }
 
