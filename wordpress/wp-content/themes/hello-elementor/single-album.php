@@ -70,6 +70,39 @@ while ( have_posts() ) :
         text-align: center;
         margin-bottom: 20px;
     }
+    /* Tùy chỉnh màu nền và kích thước của các nút chuyển ảnh */
+    .e-lightbox__arrow {
+        background-color: rgba(0, 0, 0, 0.5) !important; /* Nền màu đen mờ */
+        border-radius: 50% !important; /* Bo tròn tạo hình tròn */
+        width: 40px !important; /* Chiều rộng */
+        height: 40px !important; /* Chiều cao */
+        transition: background-color 0.3s ease;
+    }
+
+    /* Tùy chỉnh màu khi di chuột vào */
+    .e-lightbox__arrow:hover {
+        background-color: rgba(0, 0, 0, 0.8) !important; /* Nền màu đen đậm hơn */
+    }
+
+    /* Tùy chỉnh biểu tượng mũi tên */
+    .e-lightbox__arrow svg {
+        color: #fff !important; /* Màu mũi tên trắng */
+        font-size: 20px !important; /* Kích thước mũi tên */
+    }
+
+    /* Vị trí của các nút */
+    .e-lightbox__arrow__left {
+        left: 20px !important;
+    }
+
+    .e-lightbox__arrow__right {
+        right: 20px !important;
+    }
+
+    /* Tùy chỉnh màu nền tổng thể của lightbox */
+    .e-lightbox {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+    }
 </style>
 
 <?php
