@@ -1,11 +1,11 @@
 <?php
-
 get_header();
-
-echo "test";
 while ( have_posts() ) :
     the_post();
     $image_ids = get_post_meta( get_the_ID(), 'album_gallery', true ) ?: [];
+
+    // Tạo một tên duy nhất cho slideshow dựa trên ID của bài viết
+    $slideshow_name = 'album-' . get_the_ID();
 ?>
 
 <div class="album-container">
@@ -23,7 +23,7 @@ while ( have_posts() ) :
                 if ( $thumb_url && $full_url ) {
                     ?>
                     <div class="image-item">
-                        <a href="<?php echo esc_url( $full_url ); ?>" data-elementor-open-lightbox="yes">
+                        <a href="<?php echo esc_url( $full_url ); ?>" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="<?php echo esc_attr($slideshow_name); ?>">
                             <img src="<?php echo esc_url( $thumb_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" />
                         </a>
                     </div>
@@ -39,7 +39,7 @@ while ( have_posts() ) :
     /* CSS để tạo layout grid và làm ảnh hình vuông */
     .image-grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
         gap: 15px;
         margin-top: 30px;
     }
