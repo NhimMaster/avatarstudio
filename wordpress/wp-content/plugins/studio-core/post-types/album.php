@@ -98,19 +98,20 @@ function studio_album_gallery_box_callback($post)
                     var selection = image_frame.state().get('selection');
                     var ids = [];
                     $('#album-gallery-container ul').html('');
-		    selection.map(function(att) {
-			    att = att.toJSON();
-			    if(att.id){
-			ids.push(att.id);
-			let imageUrl = att.url;
-			console.log("check in aa", att)
-				if(att.sizes.thumbnail){
-					imageUrl = att.sizes.thumbnail.url;
-			}
-                        $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img src="' + imageUrl + '" /></li>');
-			    }});
-			    $('#album_gallery_ids').val(ids.join(','));
-		    
+                    selection.map(function(att) {
+                        att = att.toJSON();
+                        if (att.id) {
+                            ids.push(att.id);
+                            let imageUrl = att.url;
+                            console.log("check in aa", att)
+                            if (att.sizes.thumbnail) {
+                                imageUrl = att.sizes.thumbnail.url;
+                            }
+                            $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img width="60px" height="auto" src="' + imageUrl + '" /></li>');
+                        }
+                    });
+                    $('#album_gallery_ids').val(ids.join(','));
+
                 });
                 image_frame.open();
             });
