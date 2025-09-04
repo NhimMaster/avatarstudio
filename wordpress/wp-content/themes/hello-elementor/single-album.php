@@ -6,6 +6,7 @@
 
 get_header();
 
+echo "test";
 while ( have_posts() ) :
     the_post();
     $image_ids = get_post_meta( get_the_ID(), 'album_gallery', true ) ?: [];
