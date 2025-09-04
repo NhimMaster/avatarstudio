@@ -40,7 +40,7 @@ while (have_posts()) :
         .image-grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-            gap: 0.125rem;
+            gap: 0.5rem;
             margin-top: 2rem;
         }
 
@@ -68,12 +68,12 @@ while (have_posts()) :
         .album-container {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0.5rem;
         }
 
         .album-title {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
 
         .elementor-lightbox .swiper .elementor-swiper-button-next, .elementor-lightbox .elementor-swiper-button-prev {
