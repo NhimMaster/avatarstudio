@@ -52,7 +52,7 @@ function studio_album_gallery_box_callback($post)
 
     foreach ($image_ids as $image_id) {
         $thumb = wp_get_attachment_image($image_id, 'thumnails');
-        echo "<li style='display:inline-block; margin-right:10px; '>$thumb</li>";
+        echo "<li style='display:inline-block; margin-right:10px;'>$thumb</li>";
     }
 
     echo '</ul>';
@@ -107,7 +107,7 @@ function studio_album_gallery_box_callback($post)
                             if (att.sizes.thumbnail) {
                                 imageUrl = att.sizes.thumbnail.url;
                             }
-                            $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px; width: 80px;"><img src="' + imageUrl + '" /></li>');
+                            $('#album-gallery-container ul').append('<li style="display:inline-block; margin-right:10px;"><img src="' + imageUrl + '" /></li>');
                         }
                     });
                     $('#album_gallery_ids').val(ids.join(','));
