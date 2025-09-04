@@ -76,13 +76,13 @@ while (have_posts()) :
             margin-bottom: 20px;
         }
 
-        .elementor-lightbox .elementor-swiper-button {
+        .elementor-lightbox .swiper .elementor-swiper-button-next, .elementor-lightbox .elementor-swiper-button-prev {
             opacity: 1;
             position: absolute;
             z-index: 1;
             top: 0;
         }
-        .elementor-lightbox .elementor-swiper-button svg{
+        .elementor-lightbox .swiper .elementor-swiper-button svg{
             width: 50px;
         }
     </style>
