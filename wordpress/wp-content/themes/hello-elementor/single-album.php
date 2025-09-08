@@ -39,9 +39,14 @@ while (have_posts()) :
         /* CSS để tạo layout grid và làm ảnh hình vuông */
         .image-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 0.5rem;
             margin-top: 2rem;
+        }
+        @media(max-width: 786px){
+            .image-grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
         .image-item {
@@ -49,6 +54,8 @@ while (have_posts()) :
             padding-bottom: 100%;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: 5px 5px 5px #bcbbbb;
+            border-radius: 1rem;
         }
 
         .image-item img {
